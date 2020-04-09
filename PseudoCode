@@ -1,20 +1,21 @@
 *
 Build HTML - bootstrap
+
 Grab current date for the top of the scheduler - moment JS
 
 Grab current hours for scheduler - moment.hours
 
+Color coded hours - store in scheduleInput the numeric value stored in that block 
 
+Set interval timer that updates page every hour
 
-Color coded hours - store in input box the numeric value stored in that block - set interval timer that updates every hour
+JS- capture all scheduleInput boxes $() input - gives array of all scheduleInput boxes and then you can do .each 
 
-JS- capture all input boxes $() input - gives array of all input boxes and then you can do .each
-
-Loop through input box - look at numeric value - If Statement if current time is > row time = add class past  else = present
+Loop through scheduleInput box - look at numeric value - If Statement if current time is > row time = add class past  else = present
 
 One click event for save button and put event on that class
 
-.THIS will give you the element you clicked and the DOM triversal for which input matches
+.THIS will give you the element you clicked and the DOM triversal for which scheduleInput matches
 
 Save in local storage
 When page loads stored items in local storage are grabed and displayed on page.
