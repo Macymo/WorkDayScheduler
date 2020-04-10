@@ -25,21 +25,21 @@ $("input").each(function(){
 
 $(".saveBtn").click(function(){
     var scheduleInputs = $(this).siblings(".event").val();
-    //console.log(events);
+    //console.log(scheduleInputs);
     var inputsLocation = $(this).siblings(".event").attr("id");
-    //console.log(eventsLocation);
+    //console.log(inputsLocation);
     localStorage.setItem(inputsLocation,scheduleInputs);
 });
 
-$(".event").each(function(){
-    var renderInputs = $(this).attr("id")
-    //console.log(renderInputs);
-    $(this).val(localStorage.getItem(renderInputs));
-     if(renderInputs === null) {
-        return;
-    };
-});
-
+function renderStoredInputs(){
+    $(".event").each(function(){
+        var inputId = $(this).attr("id")
+        //console.log(inputId);
+        $(this).val(localStorage.getItem(inputId));
+        //console.log(localStorage.getItem(inputId));
+    });
+};
+renderStoredInputs();
 });
 
 
