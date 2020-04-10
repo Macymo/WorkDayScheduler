@@ -4,8 +4,7 @@ function getDate(){
     $("#currentDay").text(moment().format('MMMM Do YYYY, h:mm:ss a'));
 };
 
-//set interval timer that updates page every hour
-
+//set interval timer that updates page every second
 setInterval(getDate,1000);
 
 var hour = moment().hours();
@@ -25,11 +24,20 @@ $("input").each(function(){
 });
 
 $(".saveBtn").click(function(){
-    var inputs = $(this).siblings(".event").val();
-    console.log(inputs);
-    var inputsLocation = $(this).parent().attr("id");
-    console.log(inputsLocation);
-    localStorage.setItem(inputs,inputsLocation);
+    var scheduleInputs = $(this).siblings(".event").val();
+    //console.log(events);
+    var inputsLocation = $(this).siblings(".event").attr("id");
+    //console.log(eventsLocation);
+    localStorage.setItem(inputsLocation,scheduleInputs);
+});
+
+$(".event").each(function(){
+    var renderInputs = $(this).attr("id")
+    //console.log(renderInputs);
+    $(this).val(localStorage.getItem(renderInputs));
+     if(renderInputs === null) {
+        return;
+    };
 });
 
 });
