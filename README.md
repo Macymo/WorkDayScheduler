@@ -16,6 +16,6 @@ https://macymo.github.io/WorkDayScheduler/
 Contact Me
 
 ## Questions
-MacyMo
+Macymo
 
 
